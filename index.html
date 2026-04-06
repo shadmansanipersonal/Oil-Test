@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishwarganjoil - ফুয়েল পাম্প সিস্টেম</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&amp;display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>🛢️ Ishwarganjoil.com</h1>
+                <p>ফুয়েল ম্যানেজমেন্ট সিস্টেম</p>
+            </div>
+        </header>
+
+        <!-- Navigation (hidden on mobile, used for desktop) -->
+        <nav class="nav">
+            <button onclick="showPage('home')" class="nav-btn">🏠 Home</button>
+            <button onclick="showPage('register')" class="nav-btn">📝 Register</button>
+            <button onclick="showPage('user')" class="nav-btn">👤 User Dashboard</button>
+            <button onclick="showPage('admin')" class="nav-btn">⚙️ Admin</button>
+        </nav>
+
+        <!-- Pages -->
+        <main class="main">
+            <!-- Home Page -->
+            <section id="home" class="page active">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h2>স্বাগতম Ishwarganjoil ফুয়েল পাম্পে!</h2>
+                        <p class="hero-text">আপনার QR কোড স্ক্যান করে রেজিস্ট্রেশন করুন</p>
+                        <div class="qr-demo">
+                            <div class="qr-placeholder" id="home-qr"></div>
+                            <p>📱 QR Code স্ক্যান করুন</p>
+                        </div>
+                        <button onclick="showPage('register')" class="cta-btn">শুরু করুন →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Registration Page -->
+            <section id="register" class="page">
+                <div class="card">
+                    <h2>📝 নিবন্ধন করুন</h2>
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label>নাম Name</label>
+                            <input type="text" id="reg-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>ফোন নম্বর Phone</label>
+                            <input type="tel" id="reg-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>গাড়ির নম্বর Vehicle No</label>
+                            <input type="text" id="reg-vehicle" required>
+                        </div>
+                        <button type="submit" class="btn-primary">নিবন্ধন করুন</button>
+                    </form>
+                    <p class="back-link" onclick="showPage('home')">← বাড়ি</p>
+                </div>
+            </section>
+
+            <!-- User Dashboard -->
+            <section id="user" class="page">
+                <div class="card">
+                    <h2>👤 ইউজার ড্যাশবোর্ড</h2>
+                    <div id="user-qr-card" class="qr-card" style="display:none;">
+                        <h3>আপনার QR কোড</h3>
+                        <canvas id="user-qr-canvas"></canvas>
+                        <p id="user-id-display"></p>
+                    </div>
+                    
+                    <div id="eligibility-status" class="status-card">
+                        <h3>স্ট্যাটাস</h3>
+                        <div id="status-message"></div>
+                        <div id="countdown" class="countdown"></div>
+                    </div>
+
+                    <div class="history-section">
+                        <h3>🛢️ ফুয়েল হিস্ট্রি (সর্বশেষ ৭ দিন)</h3>
+                        <div id="fuel-history"></div>
+                    </div>
+
+                    <div class="receipt-section">
+                        <h3>📄 ডিজিটাল রসিদ</h3>
+                        <div id="receipts"></div>
+                    </div>
+
+                    <p class="back-link" onclick="showPage('home')">← বাড়ি</p>
+                </div>
+            </section>
+
+            <!-- Admin Panel -->
+            <section id="admin" class="page">
+                <div class="card">
+                    <h2>⚙️ অ্যাডমিন প্যানেল</h2>
+                    
+                    <div class="scan-section">
+                        <h3>QR স্ক্যান সিমুলেটর</h3>
+                        <div class="form-group">
+                            <label>User ID দিন</label>
+                            <input type="text" id="admin-userid" placeholder="যেমন: user123">
+                            <button onclick="adminScan()" class="btn-primary">স্ক্যান করুন</button>
+                        </div>
+                    </div>
+
+                    <div id="admin-user-info" class="admin-result" style="display:none;">
+                        <div id="admin-status" class="status-card"></div>
+                        <div id="admin-history"></div>
+                        
+                        <button id="mark-fuel-btn" onclick="markFuelGiven()" class="btn-danger" style="display:none;">✅ তেল দেওয়া হয়েছে চিহ্নিত করুন</button>
+                    </div>
+
+                    <div class="log-section">
+                        <h3>📋 স্ক্যান লগ</h3>
+                        <div id="scan-log"></div>
+                    </div>
+
+                    <p class="back-link" onclick="showPage('home')">← বাড়ি</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 All Rights Reserved</p>
+            <p>Developed by Shadman Sani</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
