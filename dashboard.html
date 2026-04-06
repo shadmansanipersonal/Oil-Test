@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Ishwar Ganjo Oil</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 User Dashboard</h1>
+            <a href="index.html" class="back-btn"><< Home</a>
+        </header>
+        
+        <main>
+            <div id="userInfo" class="card hidden">
+                <h2>আপনার তথ্য</h2>
+                <p><strong>Name:</strong> <span id="dashName"></span></p>
+                <p><strong>Phone:</strong> <span id="dashPhone"></span></p>
+                <p><strong>Vehicle:</strong> <span id="dashVehicle"></span></p>
+                <p><strong>User ID:</strong> <span id="dashUserId"></span></p>
+                
+                <div id="qrCodeDash"></div>
+            </div>
+            
+            <div id="eligibilityCard" class="card">
+                <h3>তেল নেওয়ার যোগ্যতা</h3>
+                <div id="status" class="status">Loading...</div>
+                <div id="countdown" class="countdown hidden"></div>
+                <p id="lastFuel"></p>
+            </div>
+            
+            <div class="card">
+                <h3>Fuel History (Last 7 Days)</h3>
+                <div id="fuelHistory"></div>
+            </div>
+            
+            <div class="card">
+                <h3>Digital Receipts</h3>
+                <div id="receipts"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&amp;copy; 2026 All Rights Reserved | Developed by Shadman Sani</p>
+        </footer>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

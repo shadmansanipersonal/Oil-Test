@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Ishwar Ganjo Oil</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛢️ নিবন্ধন</h1>
+            <a href="index.html" class="back-btn"><< Home</a>
+        </header>
+        
+        <main>
+            <div class="card">
+                <h2>User Registration</h2>
+                <form id="registerForm">
+                    <label>নাম (Name)</label>
+                    <input type="text" id="name" required>
+                    
+                    <label>ফোন নম্বর (Phone)</label>
+                    <input type="tel" id="phone" required>
+                    
+                    <label>গাড়ির নম্বর (Vehicle No)</label>
+                    <input type="text" id="vehicle" required>
+                    
+                    <button type="submit" class="btn primary">Register &amp; Get QR</button>
+                </form>
+                
+                <div id="qrContainer" class="qr-result hidden">
+                    <h3>আপনার QR Code</h3>
+                    <div id="qrCode"></div>
+                    <p>User ID: <span id="userId"></span></p>
+                    <a href="dashboard.html" class="btn primary">Go to Dashboard</a>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&amp;copy; 2026 All Rights Reserved | Developed by Shadman Sani</p>
+        </footer>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>

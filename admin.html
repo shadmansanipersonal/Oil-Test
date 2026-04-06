@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Ishwar Ganjo Oil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔧 Admin Panel</h1>
+            <a href="index.html" class="back-btn"><< Home</a>
+        </header>
+        
+        <main>
+            <div class="card">
+                <h2>QR Scan Simulation</h2>
+                <input type="text" id="scanInput" placeholder="Enter User ID to scan">
+                <button onclick="simulateScan()" class="btn primary">Scan QR</button>
+            </div>
+            
+            <div id="scanResult" class="card hidden">
+                <h3>User Info</h3>
+                <div id="adminUserInfo"></div>
+                <div id="adminStatus" class="status"></div>
+                <button id="markFuel" onclick="markFuelGiven()" class="btn hidden">Mark as Fuel Given</button>
+            </div>
+            
+            <div class="card">
+                <h3>QR Scan Log</h3>
+                <div id="scanLog"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&amp;copy; 2026 All Rights Reserved | Developed by Shadman Sani</p>
+        </footer>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
